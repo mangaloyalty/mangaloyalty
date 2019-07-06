@@ -1,0 +1,20 @@
+{
+  "author": "Roel van Uden",
+  "description": "Your personal manga collection on your server. Your content, your rules.",
+  "license": "MIT",
+  "main": "server",
+  "name": "mangaloyalty",
+  "repository": "git://github.com/mangaloyalty/mangaloyalty",
+  "version": "0.3.4",
+  "bin": {
+    "mangaloyalty": "./bin/mangaloyalty"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "mangaloyalty-client": "^0.3.3",
+    "mangaloyalty-server": "^0.3.4"
+  },
+  "scripts": {
+    "start": "node ."
+  }
+}
