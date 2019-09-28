@@ -5,14 +5,18 @@
   "main": "server",
   "name": "mangaloyalty",
   "repository": "git://github.com/mangaloyalty/mangaloyalty",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "bin": {
     "mangaloyalty": "./bin/mangaloyalty"
   },
+  "engines": {
+    "node": ">= 12.0.0",
+    "npm": ">= 6.0.0"
+  },
   "dependencies": {
     "express": "4.17.1",
-    "mangaloyalty-client": "^0.3.3",
-    "mangaloyalty-server": "^0.3.4"
+    "mangaloyalty-client": "0.4.0",
+    "mangaloyalty-server": "0.4.0"
   },
   "scripts": {
     "start": "node ."
