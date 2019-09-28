@@ -1,0 +1,9 @@
+{
+  "appId": "com.mangaloyalty.app",
+  "directories": {"buildResources": "app/build"},
+  "extraFiles": [{
+    "from": "app",
+    "to": "resources",
+    "filter": ["*.png"]
+  }]
+}
