@@ -1,1 +1,4 @@
+/app
+/dist
 /.vscode
+/electron-*
