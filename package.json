@@ -18,7 +18,11 @@
     "mangaloyalty-client": "0.4.0",
     "mangaloyalty-server": "0.4.0"
   },
+  "devDependencies": {
+    "electron": "6.0.10"
+  },
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "ui": "electron ui.js"
   }
 }
