@@ -1,7 +1,7 @@
 const electron = require('electron');
 const express = require('express');
-const options = {icon: __dirname + '/node_modules/mangaloyalty-client/public/icons/favicon-32x32.png', title: 'MangaLoyalty'};
-const startHeadless = process.argv.some((arg) => arg === '--headless');
+const fs = require('fs');
+const path = require('path');
 let mainTray, mainWindow;
 
 function closeWindow() {
@@ -12,15 +12,15 @@ function closeWindow() {
 
 function createTray() {
   if (mainTray) return;
-  mainTray = new electron.Tray(options.icon);
+  mainTray = new electron.Tray(resourcePath('icon.png'));
   mainTray.on('double-click', createWindow);
   mainTray.setContextMenu(electron.Menu.buildFromTemplate([{click: createWindow, label: 'Launch'}, {type: 'separator'}, {role: 'quit'}]));
-  mainTray.setToolTip(options.title);
+  mainTray.setToolTip('MangaLoyalty');
 }
 
 function createWindow() {
   if (!mainWindow) {
-    mainWindow = new electron.BrowserWindow({width: 800, height: 600, autoHideMenuBar: true, icon: options.icon, title: options.title});
+    mainWindow = new electron.BrowserWindow({width: 800, height: 600, autoHideMenuBar: true, icon: resourcePath('icon.png'), title: 'MangaLoyalty'});
     mainWindow.loadURL('http://localhost:7783/');
   } else if (mainWindow.isMinimized()) {
     mainWindow.restore();
@@ -30,13 +30,19 @@ function createWindow() {
   }
 }
 
+function resourcePath(name) {
+  const currentPath = path.join(__dirname, name);
+  const resourcePath = path.join(process.resourcesPath, name);
+  return fs.existsSync(currentPath) ? currentPath : resourcePath;
+}
+
 function startApplication() {
   const server = express();
   server.disable('x-powered-by');
   server.use(require('mangaloyalty-client'));
   server.use(require('mangaloyalty-server'));
   server.listen(7783, () => {
-    if (!startHeadless) {
+    if (process.argv.every((arg) => arg !== '--headless')) {
       createTray();
       createWindow();
     } else {
