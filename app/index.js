@@ -4,14 +4,12 @@ const fs = require('fs');
 const path = require('path');
 let mainTray, mainWindow;
 
-function closeWindow() {
-  if (!mainWindow) return;
-  mainWindow.close();
+function closedWindow() {
   mainWindow = null;
 }
 
 function createTray() {
-  if (mainTray) return;
+  if (process.platform === 'darwin' || mainTray) return;
   mainTray = new electron.Tray(resourcePath('icon.png'));
   mainTray.on('double-click', createWindow);
   mainTray.setContextMenu(electron.Menu.buildFromTemplate([{click: createWindow, label: 'Launch'}, {type: 'separator'}, {role: 'quit'}]));
@@ -55,7 +53,7 @@ if (electron.app.requestSingleInstanceLock()) {
   electron.app.on('activate', createWindow);
   electron.app.on('ready', startApplication);
   electron.app.on('second-instance', createWindow);
-  electron.app.on('window-all-closed', closeWindow);
+  electron.app.on('window-all-closed', closedWindow);
 } else {
   electron.app.quit();
 }
