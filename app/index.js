@@ -1,6 +1,9 @@
 const electron = require('electron');
 const express = require('express');
 const fs = require('fs');
+const http = require('http');
+const mangaloyaltyClient = require('mangaloyalty-client');
+const mangaloyaltyServer = require('mangaloyalty-server');
 const path = require('path');
 let mainTray, mainWindow;
 
@@ -35,10 +38,15 @@ function resourcePath(name) {
 }
 
 function startApplication() {
-  const server = express();
-  server.disable('x-powered-by');
-  server.use(require('mangaloyalty-client'));
-  server.use(require('mangaloyalty-server'));
+  // Initialize the server router.
+  const serverApp = express();
+  const server = http.createServer(serverApp);
+  mangaloyaltyServer.attachSocket(server);
+
+  // Initialize the server.
+  serverApp.disable('x-powered-by');
+  serverApp.use(mangaloyaltyClient.router);
+  serverApp.use(mangaloyaltyServer.router);
   server.listen(7783, () => {
     if (process.argv.every((arg) => arg !== '--headless')) {
       createTray();

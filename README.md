@@ -44,7 +44,7 @@ MangaLoyalty is in preview. That means it is a little rough around the edges. Fe
 
 ### Install on Mac
 
-1. [Download the Mac installer](https://github.com/mangaloyalty/mangaloyalty/releases/latest/download/mangaloyalty.exe).
+1. [Download the Mac installer](https://github.com/mangaloyalty/mangaloyalty/releases/latest/download/mangaloyalty.dmg).
 2. Run the installer. Drag *MangaLoyalty* to *Applications*.
 3. Run *MangaLoyalty*. *Mac* will block the application.
 4. Open *Security & Privacy*. Click on the *Lock* icon to make changes.
