@@ -37,14 +37,14 @@ MangaLoyalty is in preview. That means it is a little rough around the edges. Fe
 
 ### Install on Windows
 
-1. [Download the Windows installer](https://github.com/mangaloyalty/mangaloyalty/releases/latest/download/mangaloyalty.exe).
+1. [Download the latest Windows installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.6.1/mangaloyalty-Setup-0.6.1.exe).
 2. Run the installer. *Windows* will block the installation.
 3. Click on *More Info* and then click on *Run anyway*.
 3. Enjoy *MangaLoyalty*!
 
 ### Install on Mac
 
-1. [Download the Mac installer](https://github.com/mangaloyalty/mangaloyalty/releases/latest/download/mangaloyalty.dmg).
+1. [Download the latest Mac installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.6.1/mangaloyalty-0.6.1.dmg).
 2. Run the installer. Drag *MangaLoyalty* to *Applications*.
 3. Run *MangaLoyalty*. *Mac* will block the application.
 4. Open *Security & Privacy*. Click on the *Lock* icon to make changes.
@@ -53,7 +53,7 @@ MangaLoyalty is in preview. That means it is a little rough around the edges. Fe
 
 ### Install on Linux
 
-1. [Download the Linux image](https://github.com/mangaloyalty/mangaloyalty/releases/latest/download/mangaloyalty.AppImage).
+1. [Download the latest Linux image](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.6.1/mangaloyalty-0.6.1.AppImage).
 2. Make the *MangaLoyalty* *AppImage* executable and run it.
 3. Enjoy *MangaLoyalty*!
 
