@@ -2,7 +2,8 @@ const electron = require('electron');
 const express = require('express');
 const fs = require('fs');
 const http = require('http');
-const mangaloyalty = {client: require('mangaloyalty-client'), server: require('mangaloyalty-server')};
+const mangaloyaltyClient = require('mangaloyalty-client');
+const mangaloyaltyServer = require('mangaloyalty-server');
 const packageData = require('../package.json');
 const path = require('path');
 let mainTray, mainWindow;
@@ -16,12 +17,12 @@ function createTray() {
   mainTray = new electron.Tray(resourcePath('icon.png'));
   mainTray.on('double-click', createWindow);
   mainTray.setContextMenu(electron.Menu.buildFromTemplate([{click: createWindow, label: 'Launch'}, {type: 'separator'}, {role: 'quit'}]));
-  mainTray.setToolTip(`MangaLoyalty (${packageData.version})`);
+  mainTray.setToolTip(`${packageData.name} (${packageData.version})`);
 }
 
 function createWindow() {
   if (!mainWindow) {
-    mainWindow = new electron.BrowserWindow({width: 800, height: 600, autoHideMenuBar: true, icon: resourcePath('icon.png'), title: `MangaLoyalty (${packageData.version})`});
+    mainWindow = new electron.BrowserWindow({width: 800, height: 600, autoHideMenuBar: true, icon: resourcePath('icon.png'), title: `${packageData.name} (${packageData.version})`});
     mainWindow.on('page-title-updated', (ev) => ev.preventDefault());
     mainWindow.loadURL('http://localhost:7783/');
   } else if (mainWindow.isMinimized()) {
@@ -42,12 +43,12 @@ function startApplication() {
   // Initialize the server router.
   const serverApp = express();
   const server = http.createServer(serverApp);
-  mangaloyalty.server.attachSocket(server);
+  mangaloyaltyServer.attachSocket(server);
 
   // Initialize the server.
   serverApp.disable('x-powered-by');
-  serverApp.use(mangaloyalty.client.router);
-  serverApp.use(mangaloyalty.server.router);
+  serverApp.use(mangaloyaltyClient.router);
+  serverApp.use(mangaloyaltyServer.router);
   server.listen(7783, () => {
     if (process.argv.every((arg) => arg !== '--headless')) {
       createTray();
