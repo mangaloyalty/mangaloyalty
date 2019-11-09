@@ -26,8 +26,8 @@
     "webpack": "4.41.0"
   },
   "scripts": {
-    "build": "electron-webpack && electron-builder",
-    "start": "node .",
-    "test": "electron app"
+    "app": "electron app",
+    "release": "electron-webpack && electron-builder",
+    "start": "node ."
   }
 }
