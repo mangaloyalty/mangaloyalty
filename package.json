@@ -5,7 +5,7 @@
   "main": "server",
   "name": "mangaloyalty",
   "repository": "git://github.com/mangaloyalty/mangaloyalty",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "bin": {
     "mangaloyalty": "./bin/mangaloyalty"
   },
@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "express": "4.17.1",
-    "mangaloyalty-client": "0.9.0",
-    "mangaloyalty-server": "0.9.0"
+    "mangaloyalty-client": "0.10.0",
+    "mangaloyalty-server": "0.10.0"
   },
   "devDependencies": {
     "electron": "6.0.10",
