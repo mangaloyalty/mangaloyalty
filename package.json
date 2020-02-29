@@ -5,7 +5,7 @@
   "main": "server",
   "name": "mangaloyalty",
   "repository": "git://github.com/mangaloyalty/mangaloyalty",
-  "version": "0.10.0",
+  "version": "0.10.1",
   "bin": {
     "mangaloyalty": "./bin/mangaloyalty"
   },
