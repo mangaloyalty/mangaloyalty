@@ -25,6 +25,12 @@ Your personal manga collection on your server. Your content, your rules.
     <img src="docs/images/remote-03.png" width="200">
     <img src="docs/images/remote-04.png" width="200">
 </div>
+<div>
+    <img src="docs/images/session-01.png" width="200">
+    <img src="docs/images/session-02.png" width="200">
+    <img src="docs/images/session-03.png" width="200">
+    <img src="docs/images/session-04.png" width="200">
+</div>
 
 ## Supported Providers
 
