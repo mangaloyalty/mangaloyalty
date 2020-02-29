@@ -16,8 +16,7 @@
   "dependencies": {
     "express": "4.17.1",
     "mangaloyalty-client": "0.9.0",
-    "mangaloyalty-server": "0.9.0",
-    "source-map-support": "0.5.13"
+    "mangaloyalty-server": "0.9.0"
   },
   "devDependencies": {
     "electron": "6.0.10",
