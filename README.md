@@ -87,29 +87,3 @@ With *MangaLoyalty* running on your computer, you can connect your mobile device
 2. Open *Safari* and navigate to `http://IP:7783/`. Replace `IP` with the [local IP address](https://lifehacker.com/how-to-find-your-local-and-external-ip-address-5833108) of your computer.
 3. Open the *Menu* (bottom-center icon), scroll to find and click on *Add to Home Screen* and click on *Add*.
 4. You will see *MangaLoyalty* on your home screen. Enjoy *MangaLoyalty*!
-
-## Navigation
-
-When reading, you can use various schemes to navigate.
-
-### Keyboard
-
-* `ArrowLeft`: Navigate to the page on the left.
-* `ArrowRight`: Navigate to the page on the right.
-* `ArrowUp`: Show the control UI.
-* `ArrowDown`: Hide the control UI.
-* `PageDown`: Navigate to the page on the left.
-* `PageUp`: Navigate to the page on the right.
-
-### Swipe
-
-* `SwipeLeft`: Navigate to the page on the left.
-* `SwipeRight`: Navigate to the page on the right.
-* `SwipeUp`: Show the control UI.
-* `SwipeDown`: Hide the control UI.
-
-### Tap
-
-* `TapLeft`: Navigate to the page on the left.
-* `TapRight`: Navigate to the page on the right.
-* `TapUp`: Toggle the control UI.
