@@ -63,6 +63,19 @@ MangaLoyalty is in preview. That means it is a little rough around the edges. Fe
 2. Make the *MangaLoyalty* *AppImage* executable and run it.
 3. Enjoy *MangaLoyalty*!
 
+### Docker (Raspberry Pi, Synology, etc)
+
+1. Ensure `docker` (https://www.docker.com/) is available on your device.
+2. Run the example script below. Replace `PATH` with the path to your (new) library.
+```
+docker run -d \
+  --cap-add=SYS_ADMIN \
+  -p 7783:7783 \
+  -v PATH:/home/mluser/mangaloyalty \
+  mangaloyalty/mangaloyalty
+```
+3. Open http://localhost:7783/ in a browser.
+
 ### Other
 
 1. Install `node` (http://nodejs.org/) and `npm` (https://www.npmjs.org/).
@@ -72,7 +85,7 @@ MangaLoyalty is in preview. That means it is a little rough around the edges. Fe
 
 ## Mobile
 
-With *MangaLoyalty* running on your computer, you can connect your mobile device.
+With *MangaLoyalty* running, you can connect your mobile device.
 
 ### Android
 
