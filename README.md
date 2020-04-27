@@ -4,7 +4,7 @@ Your personal manga collection on your server. Your content, your rules.
 
 ## What is MangaLoyalty?
 
-*MangaLoyalty* turns your computer (`Linux`, `Mac`, `Windows`) into a manga server. Features:
+*MangaLoyalty* turns a device (`Docker`, `Linux`, `Mac`, `Windows`) into a manga server. Features:
 
 * Collect, control, and stream all your favourite manga.
 * Your manga, for wherever you are.
@@ -63,7 +63,7 @@ MangaLoyalty is in preview. That means it is a little rough around the edges. Fe
 2. Make the *MangaLoyalty* *AppImage* executable and run it.
 3. Enjoy *MangaLoyalty*!
 
-### Docker (Raspberry Pi, Synology, etc)
+### Docker (e.g. Raspberry Pi, Synology, etc)
 
 1. Ensure `docker` (https://www.docker.com/) is available on your device.
 2. Run the example script below. Replace `PATH` with the path to your (new) library.
