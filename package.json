@@ -28,6 +28,7 @@
   "scripts": {
     "app": "electron app",
     "release": "electron-webpack && electron-builder",
+    "release:wine": "electron-webpack && electron-builder -w",
     "start": "node ."
   }
 }
