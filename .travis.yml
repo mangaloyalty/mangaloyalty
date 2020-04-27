@@ -1,33 +1,30 @@
-language: node_js
-node_js:
-  - '12.13.0'
-matrix:
+os: linux
+dist: xenial
+language: shell
+before_install:
+  - chmod -R +x travis
+jobs:
   include:
-    - os: osx
-      osx_image: xcode11.2
-      language: node_js
-      node_js: '12.13.0'
-      env:
-        - ELECTRON_CACHE=$HOME/.cache/electron
-        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-    - os: linux
-      dist: xenial
-      sudo: required
+    - stage: electron
       services: docker
-      language: generic
-before_cache:
-  - rm -rf $HOME/.cache/electron-builder/wine
-cache:
-  directories:
-    - node_modules
-    - $HOME/.cache/electron
-    - $HOME/.cache/electron-builder
-deploy:
-  provider: script
-  script: bash .travis.deploy.sh
-  skip_cleanup: true
-  on:
-    branch: master
+      script: ./travis/builder-wine.sh
+    - language: node_js
+      node_js: lts/*
+      script: npm run release
+    - os: osx
+      osx_image: xcode11.3
+      language: node_js
+      node_js: lts/*
+      script: npm run release
+    - stage: docker-image
+      services: docker
+      script: ./travis/docker-image.sh
+    - services: docker
+      arch: arm64
+      script: ./travis/docker-image.sh
+    - stage: docker-manifest
+      services: docker
+      script: ./travis/docker-manifest.sh
 branches:
   only:
   - master

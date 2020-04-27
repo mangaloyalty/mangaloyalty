@@ -50,12 +50,8 @@ function startApplication() {
   serverApp.use(mangaloyaltyClient.router);
   serverApp.use(mangaloyaltyServer.router);
   server.listen(7783, () => {
-    if (process.argv.every((arg) => arg !== '--headless')) {
-      createTray();
-      createWindow();
-    } else {
-      createTray();
-    }
+    createTray();
+    createWindow();
   });
 }
 
