@@ -1,4 +1,7 @@
-/app
-/dist
 /.vscode
+/app
+/docs
+/travis
+/.*
+/Dockerfile
 /electron-*
