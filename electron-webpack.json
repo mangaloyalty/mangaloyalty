@@ -1,4 +1,5 @@
 {
+  "externals": ["mangaloyalty-client/server", "mangaloyalty-server/server"],
   "main": {"sourceDirectory": "app"},
   "renderer": null
 }
