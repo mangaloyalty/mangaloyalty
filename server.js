@@ -1,5 +1,7 @@
+const cl = require('mangaloyalty-client/server');
 const express = require('express');
 const http = require('http');
+const sv = require('mangaloyalty-server/server');
 
 // Initialize the browser verification.
 if (process.argv.some((arg) => arg === '--verify-browser')) {
@@ -9,12 +11,14 @@ if (process.argv.some((arg) => arg === '--verify-browser')) {
 }
 
 // Initialize the server router.
-const serverApp = express();
-const server = http.createServer(serverApp);
-mangaloyaltyServer.attachSocket(server);
+sv.routerAsync().then((serverRouter) => {
+  const serverApp = express();
+  const server = http.createServer(serverApp);
+  sv.attachSocket(server);
 
-// Initialize the server.
-serverApp.disable('x-powered-by');
-serverApp.use(require('mangaloyalty-client').router);
-serverApp.use(require('mangaloyalty-server').router);
-server.listen(7783, () => console.log(`Running on http://localhost:7783/`));
+  // Initialize the server.
+  serverApp.disable('x-powered-by');
+  serverApp.use(cl.router);
+  serverApp.use(serverRouter);
+  server.listen(7783, () => console.log(`Running on http://localhost:7783/`));
+});
