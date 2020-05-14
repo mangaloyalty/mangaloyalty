@@ -1,11 +1,11 @@
+const cl = require('mangaloyalty-client/server');
 const electron = require('electron');
 const express = require('express');
 const fs = require('fs');
 const http = require('http');
-const mangaloyaltyClient = require('mangaloyalty-client');
-const mangaloyaltyServer = require('mangaloyalty-server');
 const packageData = require('../package.json');
 const path = require('path');
+const sv = require('mangaloyalty-server/server');
 let mainTray, mainWindow;
 
 function closedWindow() {
@@ -41,17 +41,19 @@ function resourcePath(name) {
 
 function startApplication() {
   // Initialize the server router.
-  const serverApp = express();
-  const server = http.createServer(serverApp);
-  mangaloyaltyServer.attachSocket(server);
+  sv.routerAsync().then((serverRouter) => {
+    const serverApp = express();
+    const server = http.createServer(serverApp);
+    sv.attachSocket(server);
 
-  // Initialize the server.
-  serverApp.disable('x-powered-by');
-  serverApp.use(mangaloyaltyClient.router);
-  serverApp.use(mangaloyaltyServer.router);
-  server.listen(7783, () => {
-    createTray();
-    createWindow();
+    // Initialize the server.
+    serverApp.disable('x-powered-by');
+    serverApp.use(cl.router);
+    serverApp.use(serverRouter);
+    server.listen(7783, () => {
+      createTray();
+      createWindow();
+    });
   });
 }
 
