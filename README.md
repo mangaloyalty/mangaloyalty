@@ -69,7 +69,7 @@ Your personal manga collection on your device. Your content, your rules.
 
 #### Android
 
-1. [Download the latest Android installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.12.1/mangaloyalty-0.12.1.apk).
+1. [Download the latest Android installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.12.2/mangaloyalty-0.12.2.apk).
 2. Run the installer with [Files](https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files). *Android* will block the installation.
 3. Click on *Settings*, enable *Allow app installs* and navigate back.
 4. Click on *Install* and then click on *Install Anyway*.
