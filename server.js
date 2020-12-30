@@ -11,14 +11,11 @@ if (process.argv.some((arg) => arg === '--verify-browser')) {
 }
 
 // Initialize the server router.
-sv.routerAsync().then((serverRouter) => {
+sv.bootAsync().then((serverRouter) => {
   const serverApp = express();
   const server = http.createServer(serverApp);
-  sv.attachSocket(server);
-
-  // Initialize the server.
   serverApp.disable('x-powered-by');
   serverApp.use(cl.router);
-  serverApp.use(serverRouter);
+  serverApp.use(serverRouter.node());
   server.listen(7783, () => console.log(`Running on http://localhost:7783/`));
 });

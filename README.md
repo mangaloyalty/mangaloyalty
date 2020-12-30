@@ -45,14 +45,14 @@ Your personal manga collection on your device. Your content, your rules.
 
 #### Install on Windows
 
-1. [Download the latest Windows installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.12.1/mangaloyalty-Setup-0.12.1.exe).
+1. [Download the latest Windows installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.13.0/mangaloyalty-Setup-0.13.0.exe).
 2. Run the installer. *Windows* will block the installation.
 3. Click on *More Info* and then click on *Run anyway*.
 4. Enjoy *MangaLoyalty*! Remember to check out [*Remote Access*](#remote-access).
 
 #### Install on Mac
 
-1. [Download the latest Mac installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.12.1/mangaloyalty-0.12.1.dmg).
+1. [Download the latest Mac installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.13.0/mangaloyalty-0.13.0.dmg).
 2. Run the installer. Drag *MangaLoyalty* to *Applications*.
 3. Run *MangaLoyalty*. *Mac* will block the application.
 4. Open *Security & Privacy*. Click on the *Lock* icon to make changes.
@@ -61,7 +61,7 @@ Your personal manga collection on your device. Your content, your rules.
 
 #### Install on Linux
 
-1. [Download the latest Linux image](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.12.1/mangaloyalty-0.12.1.AppImage).
+1. [Download the latest Linux image](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.13.0/mangaloyalty-0.13.0.AppImage).
 2. Make the *MangaLoyalty* *AppImage* executable and run it.
 3. Enjoy *MangaLoyalty*! Remember to check out [*Remote Access*](#remote-access).
 
@@ -69,7 +69,7 @@ Your personal manga collection on your device. Your content, your rules.
 
 #### Android
 
-1. [Download the latest Android installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.12.2/mangaloyalty-0.12.2.apk).
+1. [Download the latest Android installer](https://github.com/mangaloyalty/mangaloyalty/releases/download/v0.13.0/mangaloyalty-0.13.0.apk).
 2. Run the installer with [Files](https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files). *Android* will block the installation.
 3. Click on *Settings*, enable *Allow app installs* and navigate back.
 4. Click on *Install* and then click on *Install Anyway*.
